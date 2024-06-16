@@ -1,15 +1,14 @@
 import React from "react";
 import "./App.css";
-import BlogPosts from "./BlogPosts";
+import BlogPosts from "./BlogPosts"; // Importing BlogPosts component
 
 function App() {
   return (
-    <div>
-    
+    <>
       <div>
         <BlogPosts />
       </div>
-    </div>
+    </>
   );
 }
 
