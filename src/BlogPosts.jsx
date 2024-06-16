@@ -26,6 +26,9 @@ export default BlogPosts = () => {
     fetchPosts();
   }, []);
 
+  if (error) {
+    return <h1>Data fetching failed</h1>;
+  }
 
   return <></>;
 };
