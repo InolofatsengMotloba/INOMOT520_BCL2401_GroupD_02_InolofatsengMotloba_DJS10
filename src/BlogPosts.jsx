@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-export default BlogPosts = () => {
+const BlogPosts = () => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(null);
 
@@ -30,5 +30,19 @@ export default BlogPosts = () => {
     return <h1>Data fetching failed</h1>;
   }
 
-  return <></>;
+  return (
+    <div>
+      <h1>Posts</h1>
+      {posts.map((post, index) => (
+        <div key={post.id}>
+          <h2>
+            {index + 1}. {post.title}
+          </h2>
+          <p>{post.body}</p>
+        </div>
+      ))}
+    </div>
+  );
 };
+
+export default BlogPosts;

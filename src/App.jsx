@@ -1,11 +1,15 @@
 import React from "react";
 import "./App.css";
+import BlogPosts from "./BlogPosts";
 
 function App() {
   return (
-    <>
-      <h1>Posts</h1>
-    </>
+    <div>
+    
+      <div>
+        <BlogPosts />
+      </div>
+    </div>
   );
 }
 
