@@ -1,9 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const BlogPosts = () => {
   const [posts, setPosts] = useState([]); // State to hold posts fetched from API
   const [error, setError] = useState(null); // State to handle errors during fetching
+  const [loading, setLoading] = useState(true); // Loading State
 
   // useEffect hook to fetch data
   React.useEffect(() => {
@@ -24,12 +25,18 @@ const BlogPosts = () => {
       } catch (error) {
         // Catch and handle any errors during fetch
         setError(error.message);
+      } finally {
+        setLoading(false);
       }
     }
 
     // Call fetchPosts function
     fetchPosts();
   }, []);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
 
   // Render UI based on unsucessful state
   if (error) {
